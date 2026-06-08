@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+ name="viewport"
+ content="width=device-width, initial-scale=1.0">
+
+<title>
+Cash App Advocate Workflow Guidance Tool
+</title>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:#F8FAFC;
+
+    color:#1E293B;
+
+}
+
+.layout{
+
+    display:grid;
+
+    grid-template-columns:
+        320px
+        1fr
+        340px;
+
+    min-height:100vh;
+
+}
+
+/* LEFT PANEL */
+
+.sidebar{
+
+    background:#0F172A;
+
+    color:white;
+
+    padding:24px;
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:30px;
+
+}
+
+.cash-logo{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:12px;
+
+    background:#00D64F;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.brand-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.brand-title h2{
+
+    font-size:18px;
+
+}
+
+.brand-title span{
+
+    font-size:12px;
+
+    opacity:.8;
+
+}
+
+.intake-section{
+
+    margin-top:20px;
+
+}
+
+.intake-section h3{
+
+    margin-bottom:15px;
+
+}
+
+.intake-section label{
+
+    display:block;
+
+    margin-top:12px;
+
+    margin-bottom:5px;
+
+    font-size:13px;
+
+}
+
+.intake-section select{
+
+    width:100%;
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:8px;
+
+}
+
+.primary-btn{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#00D64F;
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+.journey-section{
+
+    margin-top:30px;
+
+}
+
+.journey-section h3{
+
+    margin-bottom:15px;
+
+}
+
+.journey-step{
+
+    background:rgba(255,255,255,.08);
+
+    padding:10px;
+
+    border-radius:8px;
+
+    margin-bottom:8px;
+
+}
+
+.journey-step.active{
+
+    background:#00D64F;
+
+    color:black;
+
+    font-weight:600;
+
+}
+
+/* CENTER */
+
+.main-panel{
+
+    padding:24px;
+
+}
+
+.workflow-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.workflow-header h2{
+
+    font-size:24px;
+
+}
+
+.status-badge{
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.ready{
+
+    background:#E2E8F0;
+
+}
+
+.inprogress{
+
+    background:#DBEAFE;
+
+}
+
+.completed{
+
+    background:#DCFCE7;
+
+}
+
+.cancelled{
+
+    background:#FEE2E2;
+
+}
+
+.question-box{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    min-height:140px;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,.05);
+
+}
+
+.choices{
+
+    margin-top:20px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.choice-btn{
+
+    background:#00D64F;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    padding:12px 16px;
+
+    cursor:pointer;
+
+}
+
+.script-card{
+
+    margin-top:20px;
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,.05);
+
+}
+
+.script-card h3{
+
+    margin-bottom:15px;
+
+}
+
+.script-box{
+
+    line-height:1.7;
+
+    min-height:160px;
+
+}
+
+.workflow-actions{
+
+    margin-top:20px;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.secondary-btn{
+
+    padding:12px 16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#CBD5E1;
+
+}
+
+.danger-btn{
+
+    padding:12px 16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#DC2626;
+
+    color:white;
+
+}
+
+/* RIGHT */
+
+.resource-panel{
+
+    background:#F1F5F9;
+
+    padding:24px;
+
+}
+
+.resource-card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:16px;
+
+    margin-bottom:16px;
+
+}
+
+.resource-card h3{
+
+    margin-bottom:12px;
+
+}
+
+/* MODAL */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,.5);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.modal-content{
+
+    background:white;
+
+    width:420px;
+
+    border-radius:12px;
+
+    padding:24px;
+
+}
+
+.modal-content h3{
+
+    margin-bottom:10px;
+
+}
+
+.modal-content select{
+
+    width:100%;
+
+    padding:10px;
+
+    margin-top:10px;
+
+}
+
+.modal-actions{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+```
+<!-- LEFT -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="cash-logo">
+            $
+        </div>
+
+        <div class="brand-title">
+
+            <h2>
+                Cash App
+            </h2>
+
+            <span>
+                Advocate Workflow Guidance Tool
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="intake-section">
+
+        <h3>
+            Workflow Intake
+        </h3>
+
+        <label>
+            LOB
+        </label>
+
+        <select id="lobSelect">
+
+            <option>
+                Cash App
+            </option>
+
+        </select>
+
+        <label>
+            Channel
+        </label>
+
+        <select id="channelSelect">
+
+            <option>
+                Voice
+            </option>
+
+            <option>
+                Messaging
+            </option>
+
+            <option>
+                Email
+            </option>
+
+        </select>
+
+        <label>
+            Category
+        </label>
+
+        <select id="categorySelect"></select>
+
+        <label>
+            Scenario
+        </label>
+
+        <select id="scenarioSelect"></select>
+
+        <label>
+            Sub Scenario
+        </label>
+
+        <select id="subScenarioSelect"></select>
+
+        <button
+            id="loadWorkflowBtn"
+            class="primary-btn">
+
+            Load Workflow
+
+        </button>
+
+    </div>
+
+    <div class="journey-section">
+
+        <h3>
+            Workflow Journey
+        </h3>
+
+        <div id="progressTracker">
+
+            <div class="journey-step active">
+                Verification
+            </div>
+
+            <div class="journey-step">
+                Investigation
+            </div>
+
+            <div class="journey-step">
+                Assessment
+            </div>
+
+            <div class="journey-step">
+                Resolution
+            </div>
+
+            <div class="journey-step">
+                Call Closure
+            </div>
+
+        </div>
+
+    </div>
+
+</aside>
+
+<!-- CENTER -->
+
+<main class="main-panel">
+
+    <div class="workflow-header">
+
+        <h2 id="workflowTitle">
+            Select Workflow
+        </h2>
+
+        <span
+            id="workflowBadge"
+            class="status-badge ready">
+
+            READY
+
+        </span>
+
+    </div>
+
+    <div
+        id="workflowQuestion"
+        class="question-box">
+
+        Select a workflow to begin.
+
+    </div>
+
+    <div
+        id="workflowChoices"
+        class="choices">
+
+    </div>
+
+    <div class="script-card">
+
+        <h3>
+            Advocate Script Guidance
+        </h3>
+
+        <div
+            id="scriptContent"
+            class="script-box">
+
+            Select a workflow to begin.
+
+        </div>
+
+    </div>
+
+    <div class="workflow-actions">
+
+        <button
+            id="previousBtn"
+            class="secondary-btn">
+
+            Previous Step
+
+        </button>
+
+        <button
+            id="resetBtn"
+            class="secondary-btn">
+
+            Reset Workflow
+
+        </button>
+
+        <button
+            id="cancelBtn"
+            class="danger-btn">
+
+            Cancel Workflow
+
+        </button>
+
+    </div>
+
+</main>
+
+<!-- RIGHT -->
+
+<aside class="resource-panel">
+
+    <div class="resource-card">
+
+        <h3>
+            Recommended Actions
+        </h3>
+
+        <div id="actionsPanel">
+
+            Load workflow.
+
+        </div>
+
+    </div>
+
+    <div class="resource-card">
+
+        <h3>
+            Knowledge Articles
+        </h3>
+
+        <div id="resourcePanel">
+
+            Load workflow.
+
+        </div>
+
+    </div>
+
+    <div class="resource-card">
+
+        <h3>
+            Tools & Systems
+        </h3>
+
+        <div id="toolsPanel">
+
+            Load workflow.
+
+        </div>
+
+    </div>
+
+</aside>
+```
+
+</div>
+
+<div
+    id="cancelModal"
+    class="modal hidden">
+
+```
+<div class="modal-content">
+
+    <h3>
+        Cancel Workflow
+    </h3>
+
+    <select id="cancelReason">
+
+        <option>
+            Call Disconnected
+        </option>
+
+        <option>
+            Customer Resolved Issue
+        </option>
+
+        <option>
+            Duplicate Contact
+        </option>
+
+        <option>
+            Wrong Department
+        </option>
+
+        <option>
+            Other
+        </option>
+
+    </select>
+
+    <div class="modal-actions">
+
+        <button
+            id="confirmCancelBtn"
+            class="danger-btn">
+
+            Confirm
+
+        </button>
+
+        <button
+            id="closeModalBtn"
+            class="secondary-btn">
+
+            Return
+
+        </button>
+
+    </div>
+
+</div>
+```
+
+</div>
+  <script>
+
+let workflowLibrary = {};
+
+let currentWorkflow = null;
+let currentStepId = null;
+let historyStack = [];
+
+const categorySelect = document.getElementById("categorySelect");
+const scenarioSelect = document.getElementById("scenarioSelect");
+const subScenarioSelect = document.getElementById("subScenarioSelect");
+
+const workflowTitle = document.getElementById("workflowTitle");
+const workflowQuestion = document.getElementById("workflowQuestion");
+const workflowChoices = document.getElementById("workflowChoices");
+
+const scriptContent = document.getElementById("scriptContent");
+
+const actionsPanel = document.getElementById("actionsPanel");
+const resourcePanel = document.getElementById("resourcePanel");
+const toolsPanel = document.getElementById("toolsPanel");
+
+const workflowBadge = document.getElementById("workflowBadge");
+const progressTracker = document.getElementById("progressTracker");
+
+function initializeWorkflow() {
+
+    loadCategories();
+
+    document
+        .getElementById("loadWorkflowBtn")
+        .addEventListener(
+            "click",
+            loadWorkflow
+        );
+
+    document
+        .getElementById("resetBtn")
+        .addEventListener(
+            "click",
+            resetWorkflow
+        );
+
+    document
+        .getElementById("previousBtn")
+        .addEventListener(
+            "click",
+            previousStep
+        );
+
+    categorySelect.addEventListener(
+        "change",
+        populateScenario
+    );
+
+}
+
+function loadCategories() {
+
+    categorySelect.innerHTML = "";
+
+    Object.keys(workflowLibrary)
+        .forEach(category => {
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+            option.value =
+                category;
+
+            option.textContent =
+                category;
+
+            categorySelect.appendChild(
+                option
+            );
+
+        });
+
+    populateScenario();
+
+}
+
+function populateScenario() {
+
+    const category =
+        categorySelect.value;
+
+    scenarioSelect.innerHTML = "";
+
+    const option =
+        document.createElement(
+            "option"
+        );
+
+    option.value =
+        workflowLibrary[category].scenario;
+
+    option.textContent =
+        workflowLibrary[category].scenario;
+
+    scenarioSelect.appendChild(
+        option
+    );
+
+    populateSubScenario();
+
+}
+
+function populateSubScenario() {
+
+    const category =
+        categorySelect.value;
+
+    subScenarioSelect.innerHTML = "";
+
+    Object.keys(
+        workflowLibrary[category]
+        .subScenarios
+    ).forEach(sub => {
+
+        const option =
+            document.createElement(
+                "option"
+            );
+
+        option.value = sub;
+        option.textContent = sub;
+
+        subScenarioSelect.appendChild(
+            option
+        );
+
+    });
+
+}
+
+function loadWorkflow() {
+
+    const category =
+        categorySelect.value;
+
+    const subScenario =
+        subScenarioSelect.value;
+
+    currentWorkflow =
+        workflowLibrary[
+            category
+        ].subScenarios[
+            subScenario
+        ];
+
+    currentStepId =
+        currentWorkflow.startStep;
+
+    historyStack = [];
+
+    workflowBadge.textContent =
+        "IN PROGRESS";
+
+    workflowBadge.className =
+        "status-badge inprogress";
+
+    renderCurrentStep();
+
+}
+
+function renderCurrentStep() {
+
+    const step =
+        currentWorkflow.steps[
+            currentStepId
+        ];
+
+    workflowTitle.textContent =
+        currentWorkflow.title;
+
+    workflowQuestion.innerHTML =
+        `<strong>${step.title}</strong><br><br>${step.question}`;
+
+    scriptContent.innerHTML =
+        step.script;
+
+    actionsPanel.innerHTML =
+        "<ul>" +
+        step.actions.map(
+            item =>
+                `<li>${item}</li>`
+        ).join("") +
+        "</ul>";
+
+    resourcePanel.innerHTML =
+        "<ul>" +
+        step.resources.map(
+            item =>
+                `<li>${item.name}</li>`
+        ).join("") +
+        "</ul>";
+
+    toolsPanel.innerHTML =
+        "<ul>" +
+        step.tools.map(
+            item =>
+                `<li>${item.name}</li>`
+        ).join("") +
+        "</ul>";
+
+    workflowChoices.innerHTML =
+        "";
+
+    step.choices.forEach(choice => {
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+        button.className =
+            "choice-btn";
+
+        button.textContent =
+            choice.label;
+
+        button.onclick =
+            () => {
+
+                historyStack.push(
+                    currentStepId
+                );
+
+                currentStepId =
+                    choice.next;
+
+                renderCurrentStep();
+
+            };
+
+        workflowChoices.appendChild(
+            button
+        );
+
+    });
+
+}
+
+function previousStep() {
+
+    if (
+        historyStack.length === 0
+    ) {
+        return;
+    }
+
+    currentStepId =
+        historyStack.pop();
+
+    renderCurrentStep();
+
+}
+
+function resetWorkflow() {
+
+    currentWorkflow = null;
+    currentStepId = null;
+    historyStack = [];
+
+    workflowTitle.textContent =
+        "Select Workflow";
+
+    workflowQuestion.innerHTML =
+        "Select a workflow to begin.";
+
+    workflowChoices.innerHTML =
+        "";
+
+    scriptContent.innerHTML =
+        "Select a workflow to begin.";
+
+    actionsPanel.innerHTML =
+        "Load workflow.";
+
+    resourcePanel.innerHTML =
+        "Load workflow.";
+
+    toolsPanel.innerHTML =
+        "Load workflow.";
+
+}
+
+</script>
+<script>
+
+workflowLibrary = {
+
+    "Account Access Recovery": {
+
+        scenario: "Account Access",
+
+        subScenarios: {
+
+            "Cannot Access Account": {
+
+                title:
+                    "Account Access Recovery",
+
+                startStep:
+                    "review_access",
+
+                steps: {
+
+                    review_access: {
+
+                        stage:
+                            "Investigation",
+
+                        title:
+                            "Review Account Access",
+
+                        question:
+                            "What account access issue is the customer experiencing?",
+
+                        script:
+                            "Let me review the account details and determine the best recovery path.",
+
+                        actions: [
+
+                            "Review aliases",
+
+                            "Review account status",
+
+                            "Review sign-in history"
+
+                        ],
+
+                        resources: [
+
+                            {
+
+                                name:
+                                    "Account Access - Voice",
+
+                                url:
+                                    "https://cf1.lightning.force.com/lightning/r/Knowledge__kav/ka0Pn000000NiGTIA0/view"
+
+                            }
+
+                        ],
+
+                        tools: [
+
+                            {
+
+                                name:
+                                    "CF1 Lightning"
+
+                            }
+
+                        ],
+
+                        choices: [
+
+                            {
+
+                                label:
+                                    "Recovery Available",
+
+                                next:
+                                    "provide_guidance"
+
+                            },
+
+                            {
+
+                                label:
+                                    "Escalation Required",
+
+                                next:
+                                    "escalate_case"
+
+                            }
+
+                        ]
+
+                    },
+
+                    provide_guidance: {
+
+                        stage:
+                            "Resolution",
+
+                        title:
+                            "Provide Recovery Guidance",
+
+                        question:
+                            "Provide recovery instructions.",
+
+                        script:
+                            "I will walk you through the steps needed to regain access to your account.",
+
+                        actions: [
+
+                            "Provide recovery steps",
+
+                            "Confirm understanding"
+
+                        ],
+
+                        resources: [],
+
+                        tools: [],
+
+                        choices: [
+
+                            {
+
+                                label:
+                                    "Close Interaction",
+
+                                next:
+                                    "close_case"
+
+                            }
+
+                        ]
+
+                    },
+
+                    escalate_case: {
+
+                        stage:
+                            "Resolution",
+
+                        title:
+                            "Escalate Account Access",
+
+                        question:
+                            "Recovery requires escalation.",
+
+                        script:
+                            "I will submit this case to the appropriate team for review.",
+
+                        actions: [
+
+                            "Create escalation",
+
+                            "Document findings"
+
+                        ],
+
+                        resources: [],
+
+                        tools: [
+
+                            {
+
+                                name:
+                                    "Escalation Queue"
+
+                            }
+
+                        ],
+
+                        choices: [
+
+                            {
+
+                                label:
+                                    "Close Interaction",
+
+                                next:
+                                    "close_case"
+
+                            }
+
+                        ]
+
+                    },
+
+                    close_case: {
+
+                        stage:
+                            "Call Closure",
+
+                        title:
+                            "Close Interaction",
+
+                        question:
+                            "Complete the interaction.",
+
+                        script:
+                            "Thank you for contacting Cash App. Is there anything else I can assist you with today?",
+
+                        actions: [
+
+                            "Document interaction",
+
+                            "Apply disposition"
+
+                        ],
+
+                        resources: [],
+
+                        tools: [],
+
+                        choices: []
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    },
+
+    "Missing Direct Deposit": {
+
+        scenario:
+            "Banking",
+
+        subScenarios: {
+
+            "Missing Direct Deposit": {
+
+                title:
+                    "Missing Direct Deposit",
+
+                startStep:
+                    "review_deposit",
+
+                steps: {
+
+                    review_deposit: {
+
+                        stage:
+                            "Investigation",
+
+                        title:
+                            "Review Deposit",
+
+                        question:
+                            "Can the deposit be located?",
+
+                        script:
+                            "Let me review the deposit details.",
+
+                        actions: [
+
+                            "Review transaction history",
+
+                            "Review pending deposits"
+
+                        ],
+
+                        resources: [
+
+                            {
+
+                                name:
+                                    "Direct Deposit",
+
+                                url:
+                                    "https://cf1.lightning.force.com/lightning/r/Knowledge__kav/ka0Pn000000WxzRIAS/view"
+
+                            }
+
+                        ],
+
+                        tools: [
+
+                            {
+
+                                name:
+                                    "CF1 Lightning"
+
+                            }
+
+                        ],
+
+                        choices: [
+
+                            {
+
+                                label:
+                                    "Deposit Located",
+
+                                next:
+                                    "close_case"
+
+                            }
+
+                        ]
+
+                    },
+
+                    close_case: {
+
+                        stage:
+                            "Call Closure",
+
+                        title:
+                            "Close Interaction",
+
+                        question:
+                            "Complete the interaction.",
+
+                        script:
+                            "Thank you for contacting Cash App. Is there anything else I can assist you with today?",
+
+                        actions: [
+
+                            "Document interaction",
+
+                            "Apply disposition"
+
+                        ],
+
+                        resources: [],
+
+                        tools: [],
+
+                        choices: []
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+};
+
+initializeWorkflow();
+
+</script>
+
+</body>
+</html>
