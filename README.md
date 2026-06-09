@@ -203,6 +203,5 @@ Planned:
 ## Author
 
 Owen Reyes
-Lean Six Sigma Yellow Belt | Pursuing Black Belt Certification
 
 ---
